@@ -4,9 +4,10 @@
 
 http://mask.gitapp.cn
 
-#### 项目简介
+### 项目简介
 
-该项目是基于python的web类库django开发的一套web网站，给同学做的课程作业。开发环境是django 3.2 + mysql 5.7
+该项目是基于python的web类库django开发的一套web网站，给同学做的课程作业。
+开发环境是python 3.8 + django 3.2 + mysql 5.7
 
 ### 运行步骤
 
@@ -29,6 +30,6 @@ http://mask.gitapp.cn
 
 ![](https://github.com/geeeeeeeek/mask/blob/master/static/img/demo03.png)
 
-#### 问题咨询
+### 问题咨询
 
 微信: lengqin1024
