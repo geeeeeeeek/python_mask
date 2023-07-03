@@ -1,0 +1,42 @@
+{% load static %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二手商品交易平台</title>
+    <meta name="keywords" content="供需平台">
+    <meta name="description" content="基于python的供需平台,二手商品交易平台">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/semantic.custom.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_v2.css' %}">
+    {% block css %}{% endblock css %}
+
+    <script>
+    </script>
+
+</head>
+<body>
+
+{% include "base/header.html" %}
+<div class="ui container" id="v-content">
+    {% block content %}
+    {% endblock content %}
+</div>
+{% include "base/footer.html" %}
+
+<script src="https://cdn.staticfile.org/jquery/3.7.0/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.js"></script>
+<script>
+</script>
+
+{% block javascript %}
+{% endblock javascript %}
+
+{% block modal %}
+{% endblock modal %}
+
+</body>
+</html>

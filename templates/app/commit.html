@@ -1,0 +1,76 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div id="wrapper">
+    <h3 class="res-title">请填写供需信息</h3>
+    <form class="ui large form" method="post" action="{% url 'app:commit' %}"
+                  enctype="multipart/form-data" role="form">
+        {% csrf_token %}
+        <div class="field">
+            <label>标题</label>
+            <input type="text" required name="title" placeholder="请填写标题">
+        </div>
+        <div class="field">
+            <label>类型</label>
+            <div class="ui selection  dropdown">
+                <input type="hidden" required name="type">
+                <i class="dropdown icon"></i>
+                <div class="default text">请选择</div>
+                <div class="menu">
+                    <div class="item" data-value="0">供应</div>
+                    <div class="item" data-value="1">需求</div>
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <label>有效期</label>
+            <div class="ui selection  dropdown">
+                <input type="hidden" required name="expire">
+                <i class="dropdown icon"></i>
+                <div class="default text">请选择</div>
+                <div class="menu">
+                    <div class="item" data-value="1">1天</div>
+                    <div class="item" data-value="3">3天</div>
+                    <div class="item" data-value="7">7天</div>
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <label>所在地</label>
+            <input type="text" required name="location" placeholder="如：北京朝阳区">
+        </div>
+        <div class="field">
+            <label>联系人</label>
+            <input type="text" required name="contact" placeholder="联系人">
+        </div>
+        <div class="field">
+            <label>手机</label>
+            <input type="text" required name="phone" placeholder="手机号">
+        </div>
+        <div class="field">
+            <label>微信</label>
+            <input type="text" name="weixin" placeholder="微信号(选填)">
+        </div>
+        <button class="ui primary button" type="submit">发布</button>
+
+        {% include "base/form_errors.html" %}
+        {% include "base/form_messages.html" %}
+    </form>
+</div>
+
+{% endblock content %}
+
+{% block javascript %}
+<script>
+$(function(){
+
+    $('.ui .dropdown').dropdown();
+
+});
+</script>
+{% endblock javascript %}
+
+
+

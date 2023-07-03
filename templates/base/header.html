@@ -1,0 +1,17 @@
+{% load static %}
+
+<div class="ui sticky fixed  menu">
+    <div class="ui container">
+        <a href="/" class="borderless header item">
+            <img class="logo" src="{% static 'img/logo.png' %}">
+            二手商品交易平台
+        </a>
+        <div class="v-header-extra">
+            <div class="ui small icon input v-video-search">
+                <input class="prompt" value="{{ q }}" type="text" placeholder="搜索" id="v-search">
+                <i id="search" class="search icon" style="cursor:pointer;"></i>
+            </div>
+            <a class="ui tiny secondary basic button" id="v-header-login" target="_blank" href="{% url 'app:commit' %}">发布</a>
+        </div>
+    </div>
+</div>

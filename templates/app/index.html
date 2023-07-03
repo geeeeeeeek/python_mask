@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div id="wrapper">
+
+    <div class="classification">
+        <a class="ui {% if c %}{% else %}red{% endif %} label" href="{% url 'home' %}">全部</a>
+        <a class="ui {% if c == 1|stringformat:'s' %}red{% else %}{% endif %} label" href="?c=1">求购</a>
+        <a class="ui {% if c == 0|stringformat:'s' %}red{% else %}{% endif %} label" href="?c=0">供应</a>
+    </div>
+
+    <div class="large ui middle aligned divided list">
+        {% for item in product_list %}
+        <div class="item">
+            <div class="right floated content">
+                <a class="small ui blue basic button" href="{% url 'app:detail' item.pk %}">查看</a>
+            </div>
+            <img class="ui avatar image" src="{% static 'img/ic_sell.png' %}">
+            <div class="content">
+                {{item.title}}
+            </div>
+        </div>
+        {% empty %}
+        <h3>暂无数据</h3>
+        {% endfor %}
+    </div>
+    {% include "base/page_nav.html" %}
+</div>
+{% endblock content %}
+
