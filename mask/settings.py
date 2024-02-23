@@ -24,7 +24,7 @@ SECRET_KEY = '^0=kibvej3mquo#t+&-z+3bc15ahijvdb$q30g&0@q#!^5r$wo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -76,7 +76,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'python_mask',  # 创建的数据库
         'USER': 'root',
-        'PASSWORD': '4643830',  # 你的mysql密码
+        'PASSWORD': '123456',  # 你的mysql密码
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -100,25 +100,3 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/2.1/topics/i18n/
-
-LANGUAGE_CODE = 'zh-hans'
-
-TIME_ZONE = 'Asia/Shanghai'
-
-USE_I18N = True
-
-USE_L10N = True
-
-USE_TZ = False
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.1/howto/static-files/
-
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
