@@ -4,39 +4,5 @@
 
 {% block content %}
 <div id="wrapper">
-    <div id="content">
-        <div id="wall">
-            <h1 class="res-title">{{product.title}}</h1>
-            <div class="ui clearing divider"></div>
-            <div class="fileDetail">
-                <p>
-                </p>
-                <p>
-                    类型：
-                    {% if product.type == 0|stringformat:'s' %}供应{% else %}求购{% endif %}
-                </p>
-                <p>
-                    联系人：{{product.contact}}
-                </p>
-                <p>
-                    所在地：{{product.location}}
-                </p>
-
-                {% if product.timestamp|check_expire < product.expire %}
-                <p>手机号：{{product.phone}}</p>
-                <p>微信号：{% if product.weixin %} {{product.weixin}} {% endif %}</p>
-                {% endif %}
-
-                <p>
-                    发布时间：{{product.timestamp}}
-                </p>
-                <p>
-                    有效期：{{product.expire}}天
-                </p>
-            </div>
-            <div class="push">
-            </div>
-        </div>
-    </div>
 </div>
 {% endblock content %}
